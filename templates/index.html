@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Material Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Predict Raw Material Duration</h2>
+        <form action="/predict" method="post">
+            <label>Quantity Received:</label><input type="text" name="quantity_received"><br>
+            <label>Daily Consumption Rate:</label><input type="text" name="daily_consumption_rate"><br>
+            <label>Consumption Variability:</label><input type="text" name="consumption_variability"><br>
+            <label>Reorder Frequency:</label><input type="text" name="reorder_frequency"><br>
+            <label>Safety Stock:</label><input type="text" name="safety_stock"><br>
+            <label>Lead Time:</label><input type="text" name="lead_time"><br>
+            <label>Supply Chain Disruption (0 or 1):</label><input type="text" name="supply_chain_disruption"><br>
+            <label>Process Efficiency:</label><input type="text" name="process_efficiency"><br>
+            <label>Waste Rate:</label><input type="text" name="waste_rate"><br>
+            <label>Market Demand:</label><input type="text" name="market_demand"><br>
+            <label>Seasonality (1-4):</label><input type="text" name="seasonality"><br>
+            <label>Shelf Life:</label><input type="text" name="shelf_life"><br>
+            <label>Storage Temperature:</label><input type="text" name="storage_temperature"><br>
+            <label>Initial Quality:</label><input type="text" name="initial_quality"><br>
+            <label>Supplier Variability:</label><input type="text" name="supplier_variability"><br>
+            <label>Maintenance Frequency:</label><input type="text" name="maintenance_frequency"><br>
+            <label>Production Batch Size:</label><input type="text" name="production_batch_size"><br>
+            <label>Cost Per Unit:</label><input type="text" name="cost_per_unit"><br>
+            <label>Bulk Discount:</label><input type="text" name="bulk_discount"><br>
+            <input type="submit" value="Predict">
+        </form>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+</body>
+</html>
